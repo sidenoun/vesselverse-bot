@@ -1,8 +1,3 @@
-export interface Dimensions {
-  width: number;
-  height: number;
-}
-
 export interface Transaction {
   blockNumber: number;
   blockHash: string;
