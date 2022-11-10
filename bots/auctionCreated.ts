@@ -7,11 +7,11 @@ import { Transaction } from "../src/types";
 /**
  * Handle New Auction
  */
-const handleNewAuctionTweet = async (transaction: Transaction) => {
+const handleNewAuction = async (transaction: Transaction) => {
   const id = getVesselAuctionId(transaction.topics[1]);
 
   await postAuction(id, ["twitter"]);
 };
 
 console.log("Listening...");
-alchemyClient.ws.on(auctionCreatedEvent, handleNewAuctionTweet);
+alchemyClient.ws.on(auctionCreatedEvent, handleNewAuction);
