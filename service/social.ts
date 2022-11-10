@@ -61,7 +61,7 @@ export const getPostsHistory = async (): Promise<PostsHistory[]> => {
  * @param id ID of Auction
  */
 const postAuctionText = (id: string): string => {
-  return `🏀 Bleep Bloop Blop 🏀\n\nAn auction has started for Vessel - #${id}\nLearn more at https://www.vesselverse.io/`;
+  return `🏀💫 Auction for Vessel ${id} tipping off now at https://VesselVerse.io`;
 };
 
 /**
