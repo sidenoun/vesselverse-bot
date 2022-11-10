@@ -1,11 +1,11 @@
-import { alchemyClient } from "./clients";
-import { auctionCreatedEvent } from "./events";
+import { alchemyClient } from "../src/clients";
+import { auctionCreatedEvent } from "../src/events";
 import { postAuction } from "../service/social";
 import { getVesselAuctionId } from "../utils";
-import { Transaction } from "./types";
+import { Transaction } from "../src/types";
 
 /**
- * Handle New Auction Tweet
+ * Handle New Auction
  */
 const handleNewAuctionTweet = async (transaction: Transaction) => {
   const id = getVesselAuctionId(transaction.topics[1]);

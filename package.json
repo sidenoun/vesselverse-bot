@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "auctionCreated": "ts-node bots/auctionCreated.ts"
   },
   "dependencies": {
     "alchemy-sdk": "^2.2.0",
