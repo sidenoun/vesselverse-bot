@@ -10,7 +10,7 @@ import { Transaction } from "./types";
 const handleNewAuctionTweet = async (transaction: Transaction) => {
   const id = getVesselAuctionId(transaction.topics[1]);
 
-  postAuction(id, ["twitter"]);
+  await postAuction(id, ["twitter"]);
 };
 
 console.log("Listening...");

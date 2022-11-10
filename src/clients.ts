@@ -1,6 +1,7 @@
-import { config } from "./config";
-import { Network, Alchemy } from "alchemy-sdk";
+// @ts-ignore
 import SocialPost from "social-post-api";
+import { Network, Alchemy } from "alchemy-sdk";
+import { config } from "./config";
 
 /**
  * Alchemy Client

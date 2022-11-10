@@ -5,10 +5,9 @@ import { socialPostClient } from "../src/clients";
  *
  * @param id ID of Auction
  * @param platforms Platforms to Post
- * @returns Buffer of Canvas
  */
 export const postAuction = async (id: string, platforms: string[]) => {
-  const post = await socialPostClient
+  await socialPostClient
     .post({
       post: postAuctionText(id),
       mediaUrls: [
@@ -17,18 +16,58 @@ export const postAuction = async (id: string, platforms: string[]) => {
       platforms,
     })
     .catch(console.error)
-    .then((res) => console.log(res));
+    .then((res: any) => console.log(res));
 };
 
 /**
  * Text for New Auction
  *
  * @param id ID of Auction
- * @returns Text to be used for New Auction
  */
 const postAuctionText = (id: string): string => {
-  return `🏀 Bleep Bloop Blop 🏀
-        
-    An auction has started for Vessel - #${id}
-    Learn more at https://www.vesselverse.io/`;
+  return `🏀 Bleep Bloop Blop 🏀\n\nAn auction has started for Vessel - #${id}\nLearn more at https://www.vesselverse.io/`;
+};
+
+/**
+ * Test Post
+ *
+ * @param text Text to Post
+ * @param media Media (images) to Post
+ * @param platforms Platforms to Post
+ */
+export const testPost = async (
+  text: string,
+  media: string[],
+  platforms: string[]
+) => {
+  await socialPostClient
+    .post({
+      post: text,
+      mediaUrls: media,
+      platforms,
+    })
+    .catch(console.error)
+    .then((res: any) => console.log(res));
+};
+
+/**
+ * Test Comment
+ *
+ * @param id Top Level ID
+ * @param comment Text to Post
+ * @param platforms Platforms to Post
+ */
+export const testComment = async (
+  id: string,
+  comment: string,
+  platforms: string[]
+) => {
+  await socialPostClient
+    .postComment({
+      id,
+      comment,
+      platforms,
+    })
+    .catch(console.error)
+    .then((res: any) => console.log(res));
 };
