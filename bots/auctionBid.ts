@@ -26,7 +26,7 @@ const handleNewBid = async (transaction: Transaction) => {
     const amount = bid.value;
     const address = bid.sender;
 
-    await postBid(id, auctionId, amount, address, ["twitter"]);
+    await postBid(id, auctionId, amount, address, ["twitter", "instagram"]);
   }
 };
 
