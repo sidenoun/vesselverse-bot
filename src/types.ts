@@ -16,7 +16,22 @@ export interface Config {
   SOCIAL_POST_API_KEY: string;
 }
 
-export interface AuctionCreatedEvent {
+export interface Event {
   address: string;
   topics: string[];
+}
+
+export interface AuctionBidEvent {
+  bids: Bid[];
+}
+
+export interface Bid {
+  transactionHash: string;
+  logIndex: number;
+  address: string;
+  blockNumber: number;
+  sender: string;
+  value: number;
+  vesselverseId: number;
+  extended: boolean;
 }
