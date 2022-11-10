@@ -1,6 +1,6 @@
 import axios from "axios";
 import { hexToString } from ".";
-import { AuctionBidEvent } from "../src/types";
+import { AuctionBidEvent, PostsHistory } from "../src/types";
 
 /**
  * Get Vessel Auction ID
@@ -24,4 +24,19 @@ export const getVesselAuctionBids = async (
   );
 
   return data;
+};
+
+/**
+ * Get Vessel Auction Post
+ *
+ * @param history Posts History
+ * @param id Vessel ID
+ */
+export const getAuctionPost = (
+  history: PostsHistory[],
+  id: string
+): PostsHistory[] => {
+  return history.filter((item) =>
+    item.post.includes(`An auction has started for Vessel - #${id}`)
+  );
 };

@@ -35,3 +35,8 @@ export interface Bid {
   vesselverseId: number;
   extended: boolean;
 }
+
+export interface PostsHistory {
+  post: string;
+  id: string;
+}

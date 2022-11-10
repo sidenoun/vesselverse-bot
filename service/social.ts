@@ -1,5 +1,6 @@
 import { socialPostClient } from "../src/clients";
 import { formatEther, shortAddress } from "../utils";
+import { PostsHistory } from "../src/types";
 
 /**
  * Post New Auction
@@ -45,6 +46,13 @@ export const postBid = async (
     })
     .catch(console.error)
     .then((res: any) => console.log(res));
+};
+
+/**
+ * Get Posts History
+ */
+export const getPostsHistory = async (): Promise<PostsHistory[]> => {
+  return await socialPostClient.history().catch(console.error);
 };
 
 /**

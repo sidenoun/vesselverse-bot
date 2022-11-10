@@ -1,2 +1,6 @@
 export { hexToString, formatEther, shortAddress } from "./ethers";
-export { getVesselAuctionId, getVesselAuctionBids } from "./vessel";
+export {
+  getVesselAuctionId,
+  getVesselAuctionBids,
+  getAuctionPost,
+} from "./vessel";
