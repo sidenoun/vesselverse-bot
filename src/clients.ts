@@ -1,6 +1,6 @@
 import { config } from "./config";
 import { Network, Alchemy } from "alchemy-sdk";
-import TwitterApi from "twitter-api-v2";
+import SocialPost from "social-post-api";
 
 /**
  * Alchemy Client
@@ -11,11 +11,8 @@ export const alchemyClient: Alchemy = new Alchemy({
 });
 
 /**
- * Twitter Client
+ * Social Post Client
  */
-export const twitterClient: TwitterApi = new TwitterApi({
-  appKey: config.TWITTER_APP_KEY,
-  appSecret: config.TWITTER_APP_SECRET,
-  accessToken: config.TWITTER_ACCESS_TOKEN,
-  accessSecret: config.TWITTER_ACCESS_SECRET,
-});
+export const socialPostClient: SocialPost = new SocialPost(
+  config.SOCIAL_POST_API_KEY
+);

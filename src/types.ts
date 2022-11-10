@@ -18,10 +18,7 @@ export interface Transaction {
 export interface Config {
   ALCHEMY_API_KEY: string;
   CONTRACT_ADDRESS: string;
-  TWITTER_APP_KEY: string;
-  TWITTER_APP_SECRET: string;
-  TWITTER_ACCESS_TOKEN: string;
-  TWITTER_ACCESS_SECRET: string;
+  SOCIAL_POST_API_KEY: string;
 }
 
 export interface AuctionCreatedEvent {

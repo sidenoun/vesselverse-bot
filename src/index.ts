@@ -1,7 +1,7 @@
 import { alchemyClient } from "./clients";
 import { auctionCreatedEvent } from "./events";
-import { postNewAuctionTweet } from "../service/twitter";
-import { getVesselAuctionId, getVesselAuctionImage } from "../utils";
+import { postAuction } from "../service/social";
+import { getVesselAuctionId } from "../utils";
 import { Transaction } from "./types";
 
 /**
@@ -9,9 +9,8 @@ import { Transaction } from "./types";
  */
 const handleNewAuctionTweet = async (transaction: Transaction) => {
   const id = getVesselAuctionId(transaction.topics[1]);
-  const image = await getVesselAuctionImage(id);
 
-  postNewAuctionTweet(id, image);
+  postAuction(id, ["twitter"]);
 };
 
 console.log("Listening...");
